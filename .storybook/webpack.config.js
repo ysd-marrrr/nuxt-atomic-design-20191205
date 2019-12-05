@@ -1,8 +1,11 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const rootPath = path.resolve(__dirname, '../')
 
 module.exports = ({ config }) => {
-  config.resolve.alias['@'] = path.resolve(__dirname, '../')
+  config.resolve.alias['@'] = rootPath
+  config.resolve.alias['~'] = rootPath
+  
   config.module.rules.push({
     test: /\.scss$/,
     use: [
@@ -13,7 +16,7 @@ module.exports = ({ config }) => {
         {
           loader: 'sass-loader',
           options: {
-            sourceMap: true
+            sourceMap: true,
           }
         }
       ]

@@ -1,8 +1,8 @@
 import { configure, addDecorator } from '@storybook/vue';
-import CommonCSS from './CommonCSS.vue';
+import CommonCss from './CommonCss.vue';
 
 addDecorator(story => ({
-  components: { CommonCSS },
+  components: { CommonCss },
   render(h) {
     return (
       <common-css>

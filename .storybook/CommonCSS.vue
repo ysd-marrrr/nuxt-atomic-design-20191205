@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'CommonCSS'
+    name: 'CommonCss'
   }
 </script>
 
