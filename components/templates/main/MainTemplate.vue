@@ -5,9 +5,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
 
 <script>
 import ControllPanel from '~/components/organisms/controlls/ControllPanel.vue'
@@ -17,6 +15,5 @@ export default {
     ControllPanel,
     ReviewsBox
   }
-
 }
 </script>
