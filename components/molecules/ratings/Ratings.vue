@@ -9,7 +9,7 @@
 <script>
 import RatingStar from '@/components/atoms/ratings/RatingStar.vue'
 export default {
-  components: [RatingStar],
+  components: { RatingStar },
   data() {
     return {
       stars: 3
