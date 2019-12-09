@@ -10,6 +10,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lintfix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
