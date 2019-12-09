@@ -1,10 +1,13 @@
 <template>
   <div>
+    <nav class="navbar main-navbar is-primary is-vcentered">
+      <div class="navbar-brand"><h1>Nuxt.js x Atomic Design Sample</h1></div>
+    </nav>
     <nuxt />
   </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -15,5 +18,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+.main-navbar {
+  h1 {
+    line-height: 2;
+    font-weight: bold;
+    font-size: 150%;
+  }
 }
 </style>
