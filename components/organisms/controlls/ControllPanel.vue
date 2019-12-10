@@ -4,7 +4,11 @@
       @onSliderUpdate="onDisplayAmountSliderChanged"
       :display-amount-prop="displayAmount"
     />
-    <display-stars />
+    <display-stars
+      @onDisplayStarsUpdate="onDisplayStarsTabChanged"
+      :is-display-stars-prop="isDisplayStars"
+      :display-stars-options-prop="displayStarsOptionsProp"
+    />
     <hr />
   </div>
 </template>
@@ -22,29 +26,36 @@ export default {
       type: Number,
       default: 0
     },
-    displayStarsProp: {
+    isDisplayStarsProp: {
       type: Boolean,
       default: false
-    }
-  },
-  data() {
-    return {
-      displayStars: this.displayStarsProp
+    },
+    displayStarsOptionsProp: {
+      type: Array,
+      default: function() {
+        return [
+          { value: 'false', text: 'OFF' },
+          { value: 'true', text: 'ON' }
+        ]
+      }
     }
   },
   computed: {
-    displayAmount() {
+    displayAmount: function() {
       return this.displayAmountProp
+    },
+    isDisplayStars: function() {
+      return this.isDisplayStarsProp
     }
   },
   methods: {
-    onDisplayAmountSliderChanged(newValue) {
+    onDisplayAmountSliderChanged: function(newValue) {
       this.$emit('onDisplaySettingsChanged', {
         type: 'displayAmount',
         value: newValue
       })
     },
-    onDisplayStarsTabChanged(newValue) {
+    onDisplayStarsTabChanged: function(newValue) {
       this.$emit('onDisplaySettingsChanged', {
         type: 'displayStars',
         value: newValue

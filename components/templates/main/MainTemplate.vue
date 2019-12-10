@@ -2,7 +2,8 @@
   <div class="container">
     <controll-panel
       :display-amount-prop="displayAmount"
-      :display-stars-prop="displayStars"
+      :is-display-stars-prop="isDisplayStars"
+      :display-stars-options-prop="displayStarsOptionsProp"
       @onDisplaySettingsChanged="onDisplaySettingsChanged"
     />
     <reviews-box />
@@ -24,26 +25,33 @@ export default {
       type: Number,
       default: 0
     },
-    displayStarsProp: {
+    isDisplayStarsProp: {
       type: Boolean,
       default: false
-    }
-  },
-  data() {
-    return {
-      displayStars: this.displayStarsProp
+    },
+    displayStarsOptionsProp: {
+      type: Array,
+      default: function() {
+        return [
+          { value: 'false', text: 'OFF' },
+          { value: 'true', text: 'ON' }
+        ]
+      }
     }
   },
   computed: {
-    displayAmount() {
+    displayAmount: function() {
       return this.displayAmountProp
     },
-    displayAmountText() {
+    displayAmountText: function() {
       return this.displayAmount + ' 件'
+    },
+    isDisplayStars: function() {
+      return this.isDisplayStarsProp
     }
   },
   methods: {
-    onDisplaySettingsChanged(newValue) {
+    onDisplaySettingsChanged: function(newValue) {
       this.$emit('onDisplaySettingsChanged', newValue)
     }
   }
