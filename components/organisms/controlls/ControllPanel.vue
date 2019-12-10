@@ -1,6 +1,9 @@
 <template>
   <div>
-    <display-amount-slider />
+    <display-amount-slider
+      @onSliderUpdate="onDisplayAmountSliderChanged"
+      :display-amount-prop="displayAmount"
+    />
     <display-stars />
     <hr />
   </div>
@@ -13,6 +16,40 @@ import DisplayAmountSlider from '@/components/molecules/sliders/DisplayAmountSli
 import DisplayStars from '@/components/molecules/tabs/DisplayStars.vue'
 
 export default {
-  components: { DisplayAmountSlider, DisplayStars }
+  components: { DisplayAmountSlider, DisplayStars },
+  props: {
+    displayAmountProp: {
+      type: Number,
+      default: 0
+    },
+    displayStarsProp: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      displayStars: this.displayStarsProp
+    }
+  },
+  computed: {
+    displayAmount() {
+      return this.displayAmountProp
+    }
+  },
+  methods: {
+    onDisplayAmountSliderChanged(newValue) {
+      this.$emit('onDisplaySettingsChanged', {
+        type: 'displayAmount',
+        value: newValue
+      })
+    },
+    onDisplayStarsTabChanged(newValue) {
+      this.$emit('onDisplaySettingsChanged', {
+        type: 'displayStars',
+        value: newValue
+      })
+    }
+  }
 }
 </script>

@@ -1,3 +1,14 @@
 <template>
-  <span>DefaultLabel</span>
+  <span>{{ displayTextProp }}</span>
 </template>
+
+<script>
+export default {
+  props: {
+    displayTextProp: {
+      type: String,
+      default: 'DefaultLabel'
+    }
+  }
+}
+</script>

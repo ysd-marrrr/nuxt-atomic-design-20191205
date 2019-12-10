@@ -1,6 +1,12 @@
 <template>
   <div>
-    <input type="range" value="10" min="1" max="20" />
+    <input
+      v-model="sliderValue"
+      @change="onSliderChange"
+      type="range"
+      min="1"
+      max="20"
+    />
   </div>
 </template>
 
@@ -11,5 +17,22 @@ input[type='range'] {
 </style>
 
 <script>
-export default {}
+export default {
+  props: {
+    sliderValueProp: {
+      type: Number,
+      default: 0
+    }
+  },
+  data() {
+    return {
+      sliderValue: this.sliderValueProp
+    }
+  },
+  methods: {
+    onSliderChange() {
+      this.$emit('sliderUpdate', this.sliderValue)
+    }
+  }
+}
 </script>
