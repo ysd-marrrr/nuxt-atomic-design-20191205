@@ -19,5 +19,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    // 見づらくなるので function() は書くこととする(エラーにしない)
+    "object-shorthand": [0, "always"]
   }
 }
