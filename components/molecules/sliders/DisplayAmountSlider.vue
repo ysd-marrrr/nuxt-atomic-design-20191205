@@ -30,10 +30,10 @@ export default {
     }
   },
   computed: {
-    displayAmount() {
+    displayAmount: function() {
       return this.displayAmountProp
     },
-    displayAmountText() {
+    displayAmountText: function() {
       return this.displayAmount + ' 件'
     }
   },
