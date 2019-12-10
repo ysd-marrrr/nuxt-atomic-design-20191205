@@ -40,7 +40,7 @@ export default {
     },
     isDisplayStarsProp: {
       type: Boolean,
-      default: false
+      default: true
     },
     displayStarsOptionsProp: {
       type: Array,

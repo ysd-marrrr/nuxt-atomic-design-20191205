@@ -24,7 +24,7 @@ export default {
   props: {
     isDisplayStarsProp: {
       type: Boolean,
-      default: false
+      default: true
     },
     displayStarsOptionsProp: {
       type: Array,

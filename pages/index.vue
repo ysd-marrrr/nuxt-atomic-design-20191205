@@ -92,7 +92,7 @@ export default {
         }
       ],
       displayAmount: 7,
-      isDisplayStars: false,
+      isDisplayStars: true,
       displayStarsOptions: [
         { value: 'false', text: 'OFF' },
         { value: 'true', text: 'ON' }
