@@ -1,7 +1,7 @@
 <template>
   <span class="rating-star"
-    ><span class="rating-star-on">★</span
-    ><span class="rating-star-off">★</span></span
+    ><span v-if="isStarOnProp" class="rating-star-on">★</span
+    ><span v-if="!isStarOnProp" class="rating-star-off">★</span></span
   >
 </template>
 
@@ -14,3 +14,13 @@
   color: gray;
 }
 </style>
+<script>
+export default {
+  props: {
+    isStarOnProp: {
+      type: Boolean,
+      default: true
+    }
+  }
+}
+</script>

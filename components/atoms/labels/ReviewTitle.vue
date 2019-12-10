@@ -1,5 +1,5 @@
 <template>
-  <h3>ReviewTitle</h3>
+  <h3>{{ displayTitleProp }}</h3>
 </template>
 
 <style scoped>
@@ -10,3 +10,14 @@ h3 {
   padding: 0;
 }
 </style>
+
+<script>
+export default {
+  props: {
+    displayTitleProp: {
+      type: String,
+      default: 'DefaultTitle'
+    }
+  }
+}
+</script>

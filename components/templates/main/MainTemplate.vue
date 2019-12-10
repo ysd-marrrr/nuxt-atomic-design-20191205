@@ -6,7 +6,20 @@
       :display-stars-options-prop="displayStarsOptionsProp"
       @onDisplaySettingsChanged="onDisplaySettingsChanged"
     />
-    <reviews-box />
+    <div class="columns is-multiline">
+      <div
+        v-for="review in reviewDataProp"
+        :key="review.title"
+        class="column is-4-desktop is-12-mobile"
+      >
+        <reviews-box
+          :review-title-prop="review.title"
+          :star-prop="review.stars"
+          :review-content-prop="review.comment"
+          :is-display-stars-prop="isDisplayStarsProp"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,6 +48,28 @@ export default {
         return [
           { value: 'false', text: 'OFF' },
           { value: 'true', text: 'ON' }
+        ]
+      }
+    },
+    reviewDataProp: {
+      type: Array,
+      default: function() {
+        return [
+          {
+            stars: 3,
+            title: '3 stars review',
+            comment: 'Moderate mood'
+          },
+          {
+            stars: 1,
+            title: '1 star review',
+            comment: 'Awful mood'
+          },
+          {
+            stars: 5,
+            title: '5 stars review',
+            comment: 'Excellent mood'
+          }
         ]
       }
     }
