@@ -26,7 +26,7 @@
 <style lang="scss" scoped></style>
 
 <script>
-import ControllPanel from '~/components/organisms/controlls/ControllPanel.vue'
+import ControllPanel from '~/components/organisms/controls/ControllPanel.vue'
 import ReviewsBox from '~/components/organisms/reviews/ReviewsBox.vue'
 export default {
   components: {
