@@ -5,8 +5,8 @@
     </div>
     <div class="column is-two-fifths">
       <slider
-        @sliderUpdate="onSliderUpdate"
         :slider-value-prop="displayAmount"
+        @sliderUpdate="onSliderUpdate"
       />
     </div>
     <div class="column is-one-fifth">
@@ -21,26 +21,26 @@ import Slider from '@/components/atoms/sliders/Slider.vue'
 export default {
   components: {
     DefaultLabel,
-    Slider
+    Slider,
   },
   props: {
     displayAmountProp: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   computed: {
-    displayAmount: function() {
+    displayAmount: function () {
       return this.displayAmountProp
     },
-    displayAmountText: function() {
+    displayAmountText: function () {
       return this.displayAmount + ' 件'
-    }
+    },
   },
   methods: {
     onSliderUpdate(newValue) {
       this.$emit('onSliderUpdate', newValue)
-    }
-  }
+    },
+  },
 }
 </script>

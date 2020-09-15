@@ -23,8 +23,8 @@ export default {
   props: {
     starProp: {
       type: Number,
-      default: 3
-    }
-  }
+      default: 3,
+    },
+  },
 }
 </script>

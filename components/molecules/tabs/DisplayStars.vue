@@ -5,9 +5,9 @@
     </div>
     <div class="column is-one-fifth">
       <select-tab
-        @onTabChanged="onTabUpdate"
         :selected-prop="isDisplayStars"
         :available-options-prop="displayStarsOptionsProp"
+        @onTabChanged="onTabUpdate"
       />
     </div>
   </div>
@@ -19,33 +19,33 @@ import SelectTab from '@/components/atoms/tabs/SelectTab.vue'
 export default {
   components: {
     DefaultLabel,
-    SelectTab
+    SelectTab,
   },
   props: {
     isDisplayStarsProp: {
       type: Boolean,
-      default: true
+      default: true,
     },
     displayStarsOptionsProp: {
       type: Array,
-      default: function() {
+      default: function () {
         return [
           { value: 'false', text: 'OFF' },
-          { value: 'true', text: 'ON' }
+          { value: 'true', text: 'ON' },
         ]
-      }
-    }
+      },
+    },
   },
   computed: {
-    isDisplayStars: function() {
+    isDisplayStars: function () {
       // 汎用的に使うタブの設定値に適用するためStringにする
       return String(this.isDisplayStarsProp)
-    }
+    },
   },
   methods: {
-    onTabUpdate: function(newValue) {
+    onTabUpdate: function (newValue) {
       this.$emit('onDisplayStarsUpdate', newValue)
-    }
-  }
+    },
+  },
 }
 </script>
