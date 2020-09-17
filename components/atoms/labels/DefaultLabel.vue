@@ -7,8 +7,8 @@ export default {
   props: {
     displayTextProp: {
       type: String,
-      default: 'DefaultLabel'
-    }
-  }
+      default: 'DefaultLabel',
+    },
+  },
 }
 </script>

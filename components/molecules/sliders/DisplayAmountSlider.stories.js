@@ -5,6 +5,6 @@ storiesOf('molecules/sliders/DisplayAmountSlider', module).add(
   'default',
   () => ({
     components: { DisplayAmountSlider },
-    template: '<display-amount-slider />'
+    template: '<display-amount-slider />',
   })
 )

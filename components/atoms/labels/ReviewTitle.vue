@@ -16,8 +16,8 @@ export default {
   props: {
     displayTitleProp: {
       type: String,
-      default: 'DefaultTitle'
-    }
-  }
+      default: 'DefaultTitle',
+    },
+  },
 }
 </script>

@@ -1,13 +1,13 @@
 <template>
   <div>
     <display-amount-slider
-      @onSliderUpdate="onDisplayAmountSliderChanged"
       :display-amount-prop="displayAmount"
+      @onSliderUpdate="onDisplayAmountSliderChanged"
     />
     <display-stars
-      @onDisplayStarsUpdate="onDisplayStarsTabChanged"
       :is-display-stars-prop="isDisplayStars"
       :display-stars-options-prop="displayStarsOptionsProp"
+      @onDisplayStarsUpdate="onDisplayStarsTabChanged"
     />
     <hr />
   </div>
@@ -24,43 +24,43 @@ export default {
   props: {
     displayAmountProp: {
       type: Number,
-      default: 0
+      default: 0,
     },
     isDisplayStarsProp: {
       type: Boolean,
-      default: true
+      default: true,
     },
     displayStarsOptionsProp: {
       type: Array,
-      default: function() {
+      default: function () {
         return [
           { value: 'false', text: 'OFF' },
-          { value: 'true', text: 'ON' }
+          { value: 'true', text: 'ON' },
         ]
-      }
-    }
+      },
+    },
   },
   computed: {
-    displayAmount: function() {
+    displayAmount: function () {
       return this.displayAmountProp
     },
-    isDisplayStars: function() {
+    isDisplayStars: function () {
       return this.isDisplayStarsProp
-    }
+    },
   },
   methods: {
-    onDisplayAmountSliderChanged: function(newValue) {
+    onDisplayAmountSliderChanged: function (newValue) {
       this.$emit('onDisplaySettingsChanged', {
         type: 'displayAmount',
-        value: newValue
+        value: newValue,
       })
     },
-    onDisplayStarsTabChanged: function(newValue) {
+    onDisplayStarsTabChanged: function (newValue) {
       this.$emit('onDisplaySettingsChanged', {
         type: 'displayStars',
-        value: newValue
+        value: newValue,
       })
-    }
-  }
+    },
+  },
 }
 </script>

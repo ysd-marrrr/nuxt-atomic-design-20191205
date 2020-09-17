@@ -19,32 +19,32 @@ export default {
   props: {
     selectedProp: {
       type: String,
-      default: 'false'
+      default: 'false',
     },
     availableOptionsProp: {
       type: Array,
-      default: function() {
+      default: function () {
         return [
           { value: 'false', text: 'A' },
-          { value: 'true', text: 'B' }
+          { value: 'true', text: 'B' },
         ]
-      }
-    }
+      },
+    },
   },
-  data: function() {
+  data: function () {
     return {
-      availableOptions: this.availableOptionsProp
+      availableOptions: this.availableOptionsProp,
     }
   },
   computed: {
-    selected: function() {
+    selected: function () {
       return this.selectedProp
-    }
+    },
   },
   methods: {
-    tabClick: function(newValue) {
+    tabClick: function (newValue) {
       this.$emit('onTabChanged', newValue)
-    }
-  }
+    },
+  },
 }
 </script>

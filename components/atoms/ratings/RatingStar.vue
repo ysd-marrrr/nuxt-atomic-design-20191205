@@ -19,8 +19,8 @@ export default {
   props: {
     isStarOnProp: {
       type: Boolean,
-      default: true
-    }
-  }
+      default: true,
+    },
+  },
 }
 </script>

@@ -10,8 +10,9 @@
     </div>
     <div class="columns">
       <default-label :display-text-prop="reviewContentProp" />
-    </div> </box
-></template>
+    </div>
+  </box>
+</template>
 
 <style lang="scss" scoped></style>
 
@@ -26,20 +27,20 @@ export default {
   props: {
     reviewTitleProp: {
       type: String,
-      default: 'DefaultTitle'
+      default: 'DefaultTitle',
     },
     starProp: {
       type: Number,
-      default: 3
+      default: 3,
     },
     reviewContentProp: {
       type: String,
-      default: 'Default Contents'
+      default: 'Default Contents',
     },
     isDisplayStarsProp: {
       type: Boolean,
-      default: true
-    }
-  }
+      default: true,
+    },
+  },
 }
 </script>

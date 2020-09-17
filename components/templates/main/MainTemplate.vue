@@ -31,64 +31,64 @@ import ReviewsBox from '~/components/organisms/reviews/ReviewsBox.vue'
 export default {
   components: {
     ControllPanel,
-    ReviewsBox
+    ReviewsBox,
   },
   props: {
     displayAmountProp: {
       type: Number,
-      default: 0
+      default: 0,
     },
     isDisplayStarsProp: {
       type: Boolean,
-      default: true
+      default: true,
     },
     displayStarsOptionsProp: {
       type: Array,
-      default: function() {
+      default: function () {
         return [
           { value: 'false', text: 'OFF' },
-          { value: 'true', text: 'ON' }
+          { value: 'true', text: 'ON' },
         ]
-      }
+      },
     },
     reviewDataProp: {
       type: Array,
-      default: function() {
+      default: function () {
         return [
           {
             stars: 3,
             title: '3 stars review',
-            comment: 'Moderate mood'
+            comment: 'Moderate mood',
           },
           {
             stars: 1,
             title: '1 star review',
-            comment: 'Awful mood'
+            comment: 'Awful mood',
           },
           {
             stars: 5,
             title: '5 stars review',
-            comment: 'Excellent mood'
-          }
+            comment: 'Excellent mood',
+          },
         ]
-      }
-    }
+      },
+    },
   },
   computed: {
-    displayAmount: function() {
+    displayAmount: function () {
       return this.displayAmountProp
     },
-    displayAmountText: function() {
+    displayAmountText: function () {
       return this.displayAmount + ' 件'
     },
-    isDisplayStars: function() {
+    isDisplayStars: function () {
       return this.isDisplayStarsProp
-    }
+    },
   },
   methods: {
-    onDisplaySettingsChanged: function(newValue) {
+    onDisplaySettingsChanged: function (newValue) {
       this.$emit('onDisplaySettingsChanged', newValue)
-    }
-  }
+    },
+  },
 }
 </script>
